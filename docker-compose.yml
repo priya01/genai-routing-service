@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  redis-vector-db:
+    image: redis/redis-stack:latest
+    container_name: genai-redis-vector
+    ports:
+      - "127.0.0.1:6380:6379" # Explicit loopback map interface binding to shield data pipes
+      - "127.0.0.1:8002:8001"
+    restart: always
+  
